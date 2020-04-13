@@ -7,7 +7,7 @@ def lengthOfLongestSubstring(s):
             if (i not in x): 
                 x.append(i)
                 temp_count = len(x)
-                print("1", x)
+                # print("1", x)
                 if(temp_count > count):
                     count = temp_count
             else:
@@ -16,7 +16,7 @@ def lengthOfLongestSubstring(s):
                     count = temp_count
                 x = x[x.index(i) + 1 : ]
                 x.append(i)
-                print(x)
+                # print(x)
         return(count)
 print(lengthOfLongestSubstring("aabaabcbb"))
 
