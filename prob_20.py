@@ -2,13 +2,20 @@ def isValid(s):
     brack = []
     opposite = { ')': '(', '}': '{', ']': '['}  
     ope_n = ['[', '(', '{']
-    if(s[0] == '}' or s[0] == ')' or s[0] == ']'):
-        return(False)
-    for i in range(len(s)):
-        if(s[i] in ope_n):
-            brack.append(s[i])
-        elif(brack[-1] == opposite[s[i]]):
-            brack.remove(brack[-1])
+    close = [']', ')', '}']
+    if(len(s) == 0):
+        return(True)
+    # if(s[0] == '}' or s[0] == ')' or s[0] == ']'):
+    #     return(False)
+    for val in s:
+        if((len(brack) == 0) and (val in close)):
+            return(False)
+        if(val in ope_n):
+            brack.append(val)
+            print(brack)
+        elif(brack[-1] == opposite[val]):
+            brack.pop()
+            print(brack)
         else:
             return(False)
     if(len(brack) == 0):
@@ -16,8 +23,7 @@ def isValid(s):
     else:
         return(False)
         
-        
 
-print(isValid("[])"))
+print(isValid("[([]])"))
 
     
