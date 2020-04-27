@@ -1,14 +1,18 @@
-def convert(s, numRows):
-    # nums = []
+from itertools import cycle
+def convert(s,numRows):
     out = ""
-    for i in range(0, len(s), 4):
-        out = out + s[i]
-    for i in range(1, len(s), 2):
-        out = out + s[i]
-    for i in range(2, len(s), 4):
-        out = out + s[i]
-    print(out)
-    # The output letters have a pattern like 5,3,1
-    # The above code will work when the inpRows is an odd number
+    row_nums = list(range(0, numRows))
+    row_rev = list(range(numRows-2,0,-1))
+    row_nums.extend(row_rev)
+    pool = cycle(row_nums)
+    rows = [[0 for i in range(0)] for j in range(numRows)] 
+    for i in range(0, len(s)):
+        rows[next(pool)].append(s[i])
     
-convert("PAYPALISHIRING", 4)
+    for i in range(numRows):
+        for j in range(len(rows[i])):
+            out += str(rows[i][j])
+    return(out)
+
+
+print(convert("PAYPALISHIRING", 1))
