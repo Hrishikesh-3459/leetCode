@@ -1,12 +1,12 @@
-def removeDuplicates(nums):
-    if(len(nums) == 0):
-        return 0
-    for i in range(len(nums)-1, 0, -1):
-        if (nums[i] == nums[i-1]):
-            nums.pop(nums.index(nums[i-1]))
-
-    # print(nums)
-    return(len(nums))
+# def removeDuplicates(nums):
+#     print(sorted(set(nums)))
+#     return(len(sorted(set(nums))))
         
 
-print(removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
+# print(removeDuplicates([1,1,2]))
+
+
+import copy
+l1 = [1,2,3,4,5]
+print(l1[:])
+# l2[2] = 100
