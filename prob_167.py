@@ -1,15 +1,13 @@
+import copy
 def twoSum(numbers,target):
     out = []
-    flag = False
     for num in range(len(numbers)):
         diff = target - numbers[num]
-        for j in range(num+1,len(numbers)):
-            if (numbers[j] == diff):
-                flag = True
-                out.append(num + 1)
-                out.append(j + 1)
-                break
-        if (flag == True):
-            break
-            
-    return(out)
+        temp_nums = copy.copy(numbers)
+        temp_nums.pop(num)
+        if (diff in temp_nums):
+            out.append(num + 1)
+            out.append(temp_nums.index(diff)+2)
+            return (out)
+
+print(twoSum([2,7,11,15],9))
