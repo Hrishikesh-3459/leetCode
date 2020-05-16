@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+SELECT name AS Employee FROM employee em
+WHERE salary > (SELECT salary FROM employee e
+               WHERE e.id = em.managerId);
+
