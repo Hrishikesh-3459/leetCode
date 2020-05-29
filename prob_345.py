@@ -1,17 +1,18 @@
-def reverseVowels(s):
-    vow = []
-    x = []
-    for i in s:
-        if (i in ['a','e','i','o','u']):
-            vow.append(i)
-    vow.reverse()
-    for i in range(len(s)-1,-1,-1):
-        if (s[i] in ['a','e','i','o','u']):
-            x.append(s.replace(s[i],vow[0],1))
-            vow.pop(0)
-    print(x)
-    return s
+class Solution:
+    def reverseVowels(self, s: str) -> str:
+        vow = []
+        x = ""
+        for i in s:
+            if (i in ['a','e','i','o','u', 'A', 'E', 'I', 'O', 'U']):
+                vow.append(i)
+        k = 0
+        r_vow = vow[::-1]
+        for i in s:
+            if (i not in ['a','e','i','o','u', 'A', 'E', 'I', 'O', 'U']):
+                x += i
+            else:
+                x += r_vow[k]
+                k += 1
+                
+        return x
     
-
-
-print(reverseVowels('hello'))
