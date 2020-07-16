@@ -21,3 +21,4 @@ def isAlienSorted(words, order):
             k = 0
         if words[i][k] == words[j][k]:
             k += 1
+            
