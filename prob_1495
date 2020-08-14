@@ -1,0 +1,5 @@
+# Write your MySQL query statement below
+SELECT DISTINCT title FROM content c
+JOIN TVProgram tv ON tv.content_id = c.content_id
+WHERE c.content_type = 'Movies' AND c.kids_content = 'Y' AND
+tv.program_date LIKE '%-06-%';
