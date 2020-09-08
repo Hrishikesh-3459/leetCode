@@ -24,7 +24,6 @@ class MaxStack:
             self.big_boy = float('-inf')
             self.smol_boi = float('inf')
         return x
-        
 
     def top(self) -> int:
         return self.arr[-1]
@@ -33,14 +32,13 @@ class MaxStack:
         return self.big_boy
 
     def popMax(self) -> int:
-        ind = len(self.arr) - self.arr[::-1].index(self.big_boy) - 1 
+        ind = len(self.arr) - self.arr[::-1].index(self.big_boy) - 1
         x = self.arr.pop(ind)
         try:
             self.big_boy = max(self.arr)
         except:
             self.big_boy = float('-inf')
         return x
-    
 
 
 # Your MaxStack object will be instantiated and called as such:
