@@ -1,0 +1,21 @@
+class Solution:
+    def reformatNumber(self, number: str) -> str:
+        number = number.replace(' ', '')
+        number = number.replace('-', '')
+        if len(number) <= 3:
+            return (number)
+        number = list(number)
+        ans = ""
+        while True:
+            if len(number) > 4:
+                ans += number.pop(0) + number.pop(0) + number.pop(0) + "-"
+            else:
+                break
+        # print(f"ramu {number}")
+        if len(number) == 4:
+            ans += ''.join(number[:2]) + "-" + ''.join(number[2:])
+        else:
+            ans += ''.join(number)
+        if ans[-1] == "-":
+            ans = ans[:-1]
+        return ans
