@@ -8,5 +8,3 @@ def plusOne(digits):
         ret.append(i)
     return(ret)
 print(plusOne([9]))
-
-    
